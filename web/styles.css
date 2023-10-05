@@ -180,5 +180,25 @@ footer {
     color: white;
     transition: 0.5s;
   }
+  
+.form-group {
+    margin-bottom: 20px; 
+}
+
+label {
+    display: block; 
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    max-width: 500px; 
+}
+
+
+
+
+
  
  
