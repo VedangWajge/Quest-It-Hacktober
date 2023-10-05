@@ -5,6 +5,10 @@ header {
     background-color: #7cf799;
     color: #fff;
     padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 nav {
