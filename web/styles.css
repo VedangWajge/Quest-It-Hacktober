@@ -47,6 +47,27 @@ nav {
     color: #f8c049; 
 }
 
+.toggle-button {
+    display: none;
+}
+
+/* Add a media query for mobile view */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .toggle-button {
+        display: block;
+        cursor: pointer;
+    }
+}
+
 
 section {
     background-color: #f5f5f5;
