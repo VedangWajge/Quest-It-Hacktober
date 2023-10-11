@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Quest IT - College Coding Council</title>
+  
     <link rel="stylesheet" href="styles.css">
     <link
       rel="stylesheet"
@@ -12,10 +14,14 @@
     
 </head>
 <body>
-    <header>
+   <header>
         <nav>
+            <img src="QuestIT Circle Black.png" alt="" width="100px">
             <div class="logo">Quest IT</div>
-            <ul class="nav-links">
+            <div class="toggle-button" onclick="toggleNavbar()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links" id="navLinks">
                 <li><a href="#about">About Us</a></li>
                 <li><a href="#events">Events</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -31,14 +37,15 @@
     </section>
 
     <section id="events">
-        <div class="container">
-            <h2>Upcoming Events</h2>
-            <div class="event">
+        <h2>Upcoming Events</h2>
+        <div class="container2">
+            
+            <div class="card">
                 <h3>Event Name 1</h3>
                 <p>Date: September 15, 2023</p>
                 <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
-            <div class="event">
+            <div class="card">
                 <h3>Event Name 2</h3>
                 <p>Date: October 10, 2023</p>
                 <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -50,17 +57,26 @@
         <div class="container">
             <h2>Contact Us</h2>
             <p>If you have any questions or inquiries, feel free to contact us.</p>
-            <form>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
                 <button type="submit">Submit</button>
             </form>
         </div>
     </section>
+
+
+    
 
     <footer>
         <div class="container">
@@ -83,6 +99,29 @@
     </footer>
    
 
-    <script src="script.js"></script>
+    <script src="script.js">
+        const contactForm = document.getElementById('contactForm');
+
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting the traditional way
+
+            const formData = new FormData(contactForm);
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+
+            // Simulate sending data to the server (replace with actual server endpoint)
+            // This is where you would typically make an AJAX request to a server to send an email
+            // For demonstration purposes, we'll just log the data
+            console.log('Form data:', data);
+
+            // Notify the user (replace with your desired notification method)
+            alert('Form submitted successfully!');
+
+            // Optionally, clear the form
+            contactForm.reset();
+        });
+    </script>
 </body>
 </html>
